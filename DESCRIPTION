@@ -1,0 +1,39 @@
+<h3>Important</h3><p><strong>THIS IS A TOOL COLLECTION ONLY FOR DEVELOPERS, IT DOESN'T ADD ANYTHING TO THE GAME</strong></p>
+<h3>Functions</h3><p>
+Currently wraps following functions:<br/>
+ClientLib.Data.CityBuildings.prototype.get_Buildings<br/>
+ClientLib.Data.CityUnits.prototype.get_DefenseUnits<br/>
+ClientLib.Data.CityEntity.prototype.get_UnitLevelRequirements<br/>
+ClientLib.Data.CityRepair.prototype.CanRepair<br/>
+ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost
+</p>
+<h3>Usage</h3>
+
+Simply install this userscript and you can use it like this:
+
+<pre>
+(function (){
+  var MyTools_main = function() {
+    try {
+      function CCTAWrapperIsInstalled() {
+        return (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled);
+      }
+      
+      function createMyTools() {
+        if(!CCTAWrapperIsInstalled()) { console.log("meeeep prerequisites not installed!"); }
+      }
+    } catch (e) {
+      console.log("createMyTools: ", e);
+    }
+    [...]
+  }
+}); 
+[...]
+</pre>
+<p>
+Notice that people have to install both scripts to use the wrapper functions and your script.
+</p>
+<h3>Contribute</h3>
+<a href="https://github.com/fxmaelstrom/CCTA_Wrapper" target="_blank">Github is available here</a>, feel free to contribute wrapper/tool functions for everyone to use.
+<p>
+Please fork it there and contribute instead of uploading a thousand of copies here on userscripts.org.</p>

@@ -1,18 +1,21 @@
 Simply install this userscript and you can use it like this:
 
+<pre>
 (function (){
-  var MaelstromTools_main = function() {
+  var MyTools_main = function() {
     try {
       function CCTAWrapperIsInstalled() {
         return (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled);
       }
       
-      function createMaelstromTools() {
+      function createMyTools() {
         if(!CCTAWrapperIsInstalled()) { console.log("meeeep prerequisites not installed!"); }
       }
     } catch (e) {
-      console.log("createMaelstromTools: ", e);
+      console.log("createMyTools: ", e);
     }
-    ...
+    [...]
   }
 }); 
+[...]
+</pre>
