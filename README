@@ -1,6 +1,5 @@
 Simply install this userscript and you can use it like this:
 
-<pre>
 (function (){
   var MaelstromTools_main = function() {
     try {
@@ -13,6 +12,5 @@ Simply install this userscript and you can use it like this:
       console.log("createMaelstromTools: ", e);
     }
     ...
-	}
+  }
 }); 
-</pre>
