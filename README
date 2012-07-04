@@ -7,7 +7,9 @@ Simply install this userscript and you can use it like this:
         return (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled);
       }
       
-      function createMaelstromTools() {...}
+      function createMaelstromTools() {
+        if(!CCTAWrapperIsInstalled()) { console.log("meeeep prerequisites not installed!"); }
+      }
     } catch (e) {
       console.log("createMaelstromTools: ", e);
     }
