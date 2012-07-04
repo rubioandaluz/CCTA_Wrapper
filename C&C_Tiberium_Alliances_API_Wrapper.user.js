@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        C&C Tiberium Alliances API Wrapper
-// @namespace   CCTAWrapper
+// @name C&C Tiberium Alliances API Wrapper
+// @namespace CCTAWrapper
 // @description Supplies some wrapper functions for public use
-// @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1
+// @include http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
+// @version 1
 // ==/UserScript==
 
 (function (){
@@ -19,20 +19,10 @@
           ClientLib.Data.CityBuildings.prototype.get_Buildings = function() {
             // m_Buildings , GetFullRepairTime
             try {
-              if(this.LYXSZY) {
-                return this.LYXSZY;
-              }
-              if(this.ZATNVD) {
-                return this.ZATNVD;
-              }
-              if(this.ZEI) {
-                return this.ZEI;
-              }
-              
-              return null; 
+              return this.LYXSZY ? this.LYXSZY : this.ZATNVD ? this.ZATNVD : this.ZEI ? this.ZEI : null
             } catch (e) {
               console.log("ClientLib.Data.CityBuildings.prototype.get_Buildings: ", e);
-              return null; 
+              return null;
             }
           }
         }
@@ -41,20 +31,10 @@
           ClientLib.Data.CityUnits.prototype.get_DefenseUnits = function () {
             // m_DefenseUnits
             try {
-              if(this.KWTOCI) {
-                return this.KWTOCI;
-              }
-              if(this.OCYIKN) {
-                return this.OCYIKN; 
-              }
-              if(this.QIG) {
-                return this.QIG; 
-              }
-              
-              return null; 
+              return this.KWTOCI ? this.KWTOCI : this.OCYIKN ? this.OCYIKN : this.QIG ? this.QIG : null
             } catch (e) {
               console.log("ClientLib.Data.CityUnits.prototype.get_DefenseUnits: ", e);
-              return null; 
+              return null;
             }
           }
         }
@@ -63,20 +43,10 @@
           ClientLib.Data.CityEntity.prototype.get_UnitLevelRequirements = function() {
             // m_UnitLevelRequirements.rer
             try {
-              if(this.KBUDOV) {
-                return this.KBUDOV; 
-              }
-              if(this.RBGTWS) {
-                return this.RBGTWS; 
-              }
-              if(this.KWG) {
-                return this.KWG; 
-              }
-              
-              return null; 
+              return this.KBUDOV ? this.KBUDOV : this.RBGTWS ? this.RBGTWS : this.KWG ? this.KWG : null
             } catch (e) {
               console.log("ClientLib.Data.CityEntity.prototype.get_UnitLevelRequirements: ", e);
-              return null; 
+              return null;
             }
           }
         }
@@ -84,20 +54,10 @@
         if(!ClientLib.Data.CityRepair.prototype.CanRepair) {
           ClientLib.Data.CityRepair.prototype.CanRepair = function(_iEntityID,_mode) {
             try {
-              if(this.VGWGGR) {
-                return this.VGWGGR(_iEntityID,_mode); 
-              }
-              if(this.MZMQLL) {
-                return this.MZMQLL(_iEntityID,_mode); 
-              }
-              if(this.TWI) {
-                return this.TWI(_iEntityID,_mode); 
-              }
-              
-              return null; 
+              return this.VGWGGR ? this.VGWGGR(_iEntityID,_mode) : this.MZMQLL ? this.MZMQLL(_iEntityID,_mode) : this.TWI ? this.TWI(_iEntityID,_mode) : null
             } catch (e) {
               console.log("ClientLib.Data.CityRepair.prototype.CanRepair: ", e);
-              return null; 
+              return null;
             }
           }
         }
@@ -105,19 +65,10 @@
         if(!ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost) {
           ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost = function(_viewMode) {
             try {
-              if(this.MHTBYO) {
-                return this.MHTBYO(_viewMode);
-              }
-              if(this.VLDZIL) {
-                return this.VLDZIL(_viewMode);
-              }
-              if(this.IXI) {
-                return this.IXI(_viewMode);
-              }  
-              return null; 
+              return this.MHTBYO ? this.MHTBYO(_viewMode) : this.VLDZIL ? this.VLDZIL(_viewMode) : this.IXI ? this.IXI(_viewMode) : null
             } catch (e) {
               console.log("ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost: ", e);
-              return null; 
+              return null;
             }
           }
         }
