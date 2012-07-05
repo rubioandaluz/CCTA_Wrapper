@@ -99,6 +99,30 @@
             }
           }
         }
+        
+        if(!ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout) {
+          ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout = function() {
+            // UpdateArmyLayout$0
+            try {
+              return this.AXPSSY ? this.AXPSSY() : this.TNEWNF ? this.TNEWNF() : this.DJG ? this.DJG() : null
+            } catch (e) {
+              console.log("ClientLib.Data.CityPreArmyUnits.prototype.RefreshData: ", e);
+              return null;
+            }
+          }
+        }
+        
+         if(!ClientLib.Data.CityPreArmyUnits.prototype.RefreshData) {
+          ClientLib.Data.CityPreArmyUnits.prototype.RefreshData = function() {
+            // RefreshData$0
+            try {
+              return this.ZDELLG ? this.ZDELLG() : this.AOMXAS ? this.AOMXAS() : this.BJG ? this.BJG() : null
+            } catch (e) {
+              console.log("ClientLib.Data.CityPreArmyUnits.prototype.RefreshData: ", e);
+              return null;
+            }
+          }
+        }
       }
     } catch (e) {
       console.log("createCCTAWrapper: ", e);
