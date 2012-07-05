@@ -1,11 +1,3 @@
-// ==UserScript==
-// @name C&C Tiberium Alliances API Wrapper
-// @namespace CCTAWrapper
-// @description Supplies some wrapper functions for public use
-// @include http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1
-// ==/UserScript==
-
 (function (){
   var CCTAWrapper_main = function() {
     try {
@@ -68,6 +60,17 @@
               return this.MHTBYO ? this.MHTBYO(_viewMode) : this.VLDZIL ? this.VLDZIL(_viewMode) : this.IXI ? this.IXI(_viewMode) : null
             } catch (e) {
               console.log("ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost: ", e);
+              return null;
+            }
+          }
+        }
+        
+        if(!ClientLib.Data.City.prototype.getResourceLayout) {
+          ClientLib.Data.City.prototype.getResourceLayout = function() {
+            try {
+              return this.JTKSIY ? this.JTKSIY : this.NCTWJE ? this.NCTWJE : this.KOI ? this.KOI : null
+            } catch (e) {
+              console.log("ClientLib.Data.City.prototype.getResourceLayout: ", e);
               return null;
             }
           }
