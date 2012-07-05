@@ -1,11 +1,14 @@
 <h3>Important</h3><p><strong>THIS IS A TOOL COLLECTION ONLY FOR DEVELOPERS, IT DOESN'T ADD ANYTHING TO THE GAME</strong></p>
 <h3>Functions</h3><p>
 Currently wraps following functions:<br/>
+ClientLib.Data.City.prototype.getResourceLayout<br/>
 ClientLib.Data.CityBuildings.prototype.get_Buildings<br/>
 ClientLib.Data.CityUnits.prototype.get_DefenseUnits<br/>
 ClientLib.Data.CityEntity.prototype.get_UnitLevelRequirements<br/>
 ClientLib.Data.CityRepair.prototype.CanRepair<br/>
-ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost
+ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost<br/>
+SharedLib.Combat.CbtSimulation.prototype.DoStep<br/>
+ClientLib.Vis.Battleground.Battleground.prototype.getSimulation<br/>
 </p>
 <h3>Usage</h3>
 
