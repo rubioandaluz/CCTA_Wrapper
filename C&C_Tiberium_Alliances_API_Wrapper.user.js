@@ -87,6 +87,18 @@
             }
           }
         }
+        
+        if(!SharedLib.Combat.CbtSimulation.prototype.DoStep) {
+          SharedLib.Combat.CbtSimulation.prototype.DoStep = function(_dryRun) {
+            // m_Simulation
+            try {
+              return this.HGWHBL ? this.HGWHBL(_dryRun) : this.ICPGRO ? this.ICPGRO(_dryRun) : this.DPL ? this.DPL(_dryRun) : null
+            } catch (e) {
+              console.log("SharedLib.Combat.CbtSimulation.prototype.DoStep: ", e);
+              return null;
+            }
+          }
+        }
       }
     } catch (e) {
       console.log("createCCTAWrapper: ", e);
