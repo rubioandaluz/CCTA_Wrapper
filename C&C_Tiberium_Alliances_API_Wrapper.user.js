@@ -3,7 +3,7 @@
 // @description    Creating prototypes that EA missed in their API
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx* 
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        0.9b4
+// @version        0.9b5
 // @author         mmaelstrom and PythEch
 // ==/UserScript==
 (function() {
@@ -16,13 +16,33 @@
           /** Creating prototypes that EA missed in their API **/
           /*****************************************************/
 
-		  if (typeof System == 'undefined') {
+          if (typeof System == 'undefined') {
+            try {
+              System = $I; //Might not work
+            } catch (e) {
+              console.log("System: ", e);
+            }
+          }
+          // TEST PLEASE //
+          if (!System.CbtSetup) {
+            System.CbtSetup = function() {
               try {
-                System = $I; //Might not work
+                return this.XTJTVV ? this.XTJTVV : this.YUEBQC ? this.YUEBQC : this.PML ? this.PML : null
               } catch (e) {
                 console.log("System: ", e);
               }
+            }
           }
+          if (!System.CbtSimulation) {
+            System.CbtSimulation = function() {
+              try {
+                return this.PRFSNB ? this.PRFSNB : this.FBJZWE ? this.FBJZWE : this.QOL ? this.QOL : null
+              } catch (e) {
+                console.log("System: ", e);
+              }
+            }
+          }
+          // TEST PLEASE //
           if (!System.EventHandler) {
             System.EventHandler = function() {
               try {
@@ -65,17 +85,19 @@
               }
             }
           }
-          if (!SharedLib.Combat.CbtSetup.prototype.get_Entities) {
-            SharedLib.Combat.CbtSetup.prototype.get_Entities = function() {
+          // TEST //
+          if (!System.CbtSetup.prototype.get_Entities) {
+            System.CbtSetup.prototype.get_Entities = function() {
               // m_Entities
               try {
                 return this.UNMZDH ? this.UNMZDH : this.RMCABE ? this.RMCABE : this.OAG ? this.OAG : null
               } catch (e) {
-                console.log("SharedLib.Combat.CbtSetup.prototype.get_Entities: ", e);
+                console.log("System.CbtSetup.prototype.get_Entities: ", e);
                 return null;
               }
             }
           }
+          // TEST //
           if (!ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity) {
             ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity = function() {
               // m_Entity
@@ -178,19 +200,19 @@
               }
             }
           }
-
-          if (typeof SharedLib != 'undefined' && !SharedLib.Combat.CbtSimulation.prototype.DoStep) {
-            SharedLib.Combat.CbtSimulation.prototype.DoStep = function(_dryRun) {
+          // TEST //
+          if (!System.CbtSimulation.prototype.DoStep) {
+            System.CbtSimulation.prototype.DoStep = function(_dryRun) {
               // m_Simulation
               try {
                 return this.HGWHBL ? this.HGWHBL(_dryRun) : this.ICPGRO ? this.ICPGRO(_dryRun) : this.DPL ? this.DPL(_dryRun) : null
               } catch (e) {
-                console.log("SharedLib.Combat.CbtSimulation.prototype.DoStep: ", e);
+                console.log("System.CbtSimulation.prototype.DoStep: ", e);
                 return null;
               }
             }
           }
-
+          // TEST //
           if (!ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout) {
             ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout = function() {
               // UpdateArmyLayout$0
