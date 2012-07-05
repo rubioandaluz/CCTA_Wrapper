@@ -7,6 +7,39 @@
         /*****************************************************/
         /** Creating prototypes that EA missed in their API **/
         /*****************************************************/
+		
+		//System.EventHandler.prototype.$ctor
+		if(!System.EventHandler) {
+          System.EventHandler = function() {
+            try {
+              return $I.GRHRBP ? $I.GRHRBP : $I.WMJHOK ? $I.WMJHOK : $I.QQL ? $I.QQL : null
+            } catch (e) {
+              console.log("System.EventHandler: ", e);
+              return null;
+            }
+          }
+        }
+		if(!System.EventHandler.prototype.$ctor) {
+          System.EventHandler.prototype.$ctor = function() {
+            try {
+              return this.TNQEHB ? this.TNQEHB : this.GEDTYY ? this.GEDTYY : this.HGL ? this.HGL : null
+            } catch (e) {
+              console.log("System.EventHandler.$ctor: ", e);
+              return null;
+            }
+          }
+        }
+		if(!ClientLib.Res.ResMain.prototype.get_Gamedata) {
+          ClientLib.Res.ResMain.prototype.get_Gamedata = function() {
+            // m_Gamedata
+            try {
+              return this.NUMTUV ? this.NUMTUV : this.IYHFVG ? this.IYHFVG : this.YEJ ? this.YEJ : null
+            } catch (e) {
+              console.log("ClientLib.Res.ResMain.prototype.get_Gamedata: ", e);
+              return null;
+            }
+          }
+        }
         if(!ClientLib.Data.CityBuildings.prototype.get_Buildings) {
           ClientLib.Data.CityBuildings.prototype.get_Buildings = function() {
             // m_Buildings , GetFullRepairTime
