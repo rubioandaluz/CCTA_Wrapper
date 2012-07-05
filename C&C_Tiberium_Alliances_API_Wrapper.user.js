@@ -3,7 +3,7 @@
 // @description    Creating prototypes that EA missed in their API
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx* 
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        0.9b5
+// @version        0.9b6
 // @author         mmaelstrom and PythEch
 // ==/UserScript==
 (function() {
@@ -39,6 +39,15 @@
                 return this.PRFSNB ? this.PRFSNB : this.FBJZWE ? this.FBJZWE : this.QOL ? this.QOL : null
               } catch (e) {
                 console.log("System.CbtSimulation: ", e);
+              }
+            }
+          }
+          if (!System.BattlegroundEntity) {
+            System.BattlegroundEntity = function() {
+              try {
+                return this.MPWDBM ? this.MPWDBM : this.GMKMXN ? this.GMKMXN : this.GZJ ? this.GZJ : null
+              } catch (e) {
+                console.log("System.BattlegroundEntity: ", e);
               }
             }
           }
@@ -98,24 +107,24 @@
             }
           }
           // TEST //
-          if (!ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity) {
-            ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity = function() {
+          if (!System.BattlegroundEntity.prototype.get_Entity) {
+            System.BattlegroundEntity.prototype.get_Entity = function() {
               // m_Entity
               try {
                 return this.DPSDGN ? this.DPSDGN : this.HLUBJW ? this.HLUBJW : this.UBK ? this.UBK : null
               } catch (e) {
-                console.log("ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity: ", e);
+                console.log("System.BattlegroundEntity.prototype.get_Entity: ", e);
                 return null;
               }
             }
           }
-          if (!ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_UnitType) {
-            ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_UnitType = function() {
+          if (!System.BattlegroundEntity.prototype.get_UnitType) {
+            System.BattlegroundEntity.prototype.get_UnitType = function() {
               // m_UnitType
               try {
                 return this.LLEHXS ? this.LLEHXS : this.CMCLEW ? this.CMCLEW : this.TAK ? this.TAK : null
               } catch (e) {
-                console.log("ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_UnitType: ", e);
+                console.log("System.BattlegroundEntity.prototype.get_UnitType: ", e);
                 return null;
               }
             }
