@@ -88,7 +88,7 @@
           }
         }
         
-        if(!SharedLib.Combat.CbtSimulation.prototype.DoStep) {
+        if(typeof SharedLib != 'undefined' && !SharedLib.Combat.CbtSimulation.prototype.DoStep) {
           SharedLib.Combat.CbtSimulation.prototype.DoStep = function(_dryRun) {
             // m_Simulation
             try {
