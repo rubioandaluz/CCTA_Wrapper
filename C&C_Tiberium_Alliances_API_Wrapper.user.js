@@ -40,6 +40,28 @@
             }
           }
         }
+		if(!ClientLib.Data.CityUnits.prototype.get_FullRawRepairTimeForUnitGroupTypes) {
+          ClientLib.Data.CityUnits.prototype.get_FullRawRepairTimeForUnitGroupTypes = function() {
+            // m_FullRawRepairTimeForUnitGroupTypes
+            try {
+              return this.RAECNA ? this.RAECNA : this.NBLSAX ? this.NBLSAX : this.ZHG ? this.ZHG : null
+            } catch (e) {
+              console.log("ClientLib.Res.ResMain.prototype.get_FullRawRepairTimeForUnitGroupTypes: ", e);
+              return null;
+            }
+          }
+        }
+		if(!SharedLib.Combat.CbtSetup.prototype.get_Entities) {
+          SharedLib.Combat.CbtSetup.prototype.get_Entities = function() {
+            // m_Entities
+            try {
+              return this.UNMZDH ? this.UNMZDH : this.RMCABE ? this.RMCABE : this.OAG ? this.OAG : null
+            } catch (e) {
+              console.log("SharedLib.Combat.CbtSetup.prototype.get_Entities: ", e);
+              return null;
+            }
+          }
+        }
         if(!ClientLib.Data.CityBuildings.prototype.get_Buildings) {
           ClientLib.Data.CityBuildings.prototype.get_Buildings = function() {
             // m_Buildings , GetFullRepairTime
