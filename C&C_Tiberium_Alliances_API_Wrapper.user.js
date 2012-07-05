@@ -106,7 +106,7 @@
             try {
               return this.AXPSSY ? this.AXPSSY() : this.TNEWNF ? this.TNEWNF() : this.DJG ? this.DJG() : null
             } catch (e) {
-              console.log("ClientLib.Data.CityPreArmyUnits.prototype.RefreshData: ", e);
+              console.log("ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout: ", e);
               return null;
             }
           }
