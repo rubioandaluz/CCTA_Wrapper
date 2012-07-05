@@ -75,6 +75,18 @@
             }
           }
         }
+        
+        if(!ClientLib.Vis.Battleground.Battleground.prototype.getSimulation) {
+          ClientLib.Vis.Battleground.Battleground.prototype.getSimulation = function() {
+            // m_Simulation
+            try {
+              return this.EGIABS ? this.EGIABS : this.HXGRQD ? this.HXGRQD : this.MAG ? this.MAG : null
+            } catch (e) {
+              console.log("ClientLib.Vis.Battleground.Battleground.prototype.getSimulation: ", e);
+              return null;
+            }
+          }
+        }
       }
     } catch (e) {
       console.log("createCCTAWrapper: ", e);
