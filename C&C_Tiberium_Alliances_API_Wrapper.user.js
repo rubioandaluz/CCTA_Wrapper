@@ -1,3 +1,11 @@
+// ==UserScript==
+// @name           C&C Tiberium Alliances Wrapper
+// @description    Creating prototypes that EA missed in their API
+// @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx* 
+// @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
+// @version        0.9b4
+// @author         mmaelstrom and PythEch
+// ==/UserScript==
 (function() {
   var CCTAWrapper_main = function() {
       try {
@@ -8,11 +16,17 @@
           /** Creating prototypes that EA missed in their API **/
           /*****************************************************/
 
-          //System.EventHandler.prototype.$ctor
+		  if (typeof System == 'undefined') {
+              try {
+                System = $I; //Might not work
+              } catch (e) {
+                console.log("System: ", e);
+              }
+          }
           if (!System.EventHandler) {
             System.EventHandler = function() {
               try {
-                return $I.GRHRBP ? $I.GRHRBP : $I.WMJHOK ? $I.WMJHOK : $I.QQL ? $I.QQL : null
+                return this.GRHRBP ? this.GRHRBP : this.WMJHOK ? this.WMJHOK : this.QQL ? this.QQL : null
               } catch (e) {
                 console.log("System.EventHandler: ", e);
                 return null;
