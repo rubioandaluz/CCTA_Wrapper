@@ -29,7 +29,7 @@
               try {
                 return this.XTJTVV ? this.XTJTVV : this.YUEBQC ? this.YUEBQC : this.PML ? this.PML : null
               } catch (e) {
-                console.log("System: ", e);
+                console.log("System.CbtSetup: ", e);
               }
             }
           }
@@ -38,7 +38,7 @@
               try {
                 return this.PRFSNB ? this.PRFSNB : this.FBJZWE ? this.FBJZWE : this.QOL ? this.QOL : null
               } catch (e) {
-                console.log("System: ", e);
+                console.log("System.CbtSimulation: ", e);
               }
             }
           }
