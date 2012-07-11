@@ -3,7 +3,7 @@
 // @description Creating prototypes that EA missed in their API
 // @namespace CCTAWrapper
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 0.9b8
+// @version 0.9b9
 // @author mmaelstrom and PythEch
 // ===/UserScript===
 (function() {
@@ -29,6 +29,8 @@
           case 361439:
             v = 2;
             break;
+          case 363782:
+            v = 3;
           default:
             //do something//
             break;
@@ -51,7 +53,7 @@
         if (typeof SharedLib.Combat === 'undefined') {
           // look for GetProductionBuildingFromUntiMoveType
           try {
-            SharedLib.Combat = [SharedLib.MKLAOS, SharedLib.HFKQVP, SharedLib.ELL][v];
+            SharedLib.Combat = [SharedLib.MKLAOS, SharedLib.HFKQVP, SharedLib.ELL, SharedLib.NDGYDG][v];
           } catch (e) {
             console.log("SharedLib.Combat: ", e);
           }
@@ -59,14 +61,14 @@
         if (typeof SharedLib.Combat.CbtSetup === 'undefined') {
           // look for get_DamageResolution
           try {
-            SharedLib.Combat.CbtSetup = [SharedLib.XTJTVV, SharedLib.YUEBQC, SharedLib.PML][v];
+            SharedLib.Combat.CbtSetup = [SharedLib.XTJTVV, SharedLib.YUEBQC, SharedLib.PML, SharedLib.HOFZBM][v];
           } catch (e) {
             console.log("SharedLib.Combat.CbtSetup: ", e);
           }
         }
         if (typeof SharedLib.Combat.CbtSimulation === 'undefined') {
           try {
-            SharedLib.Combat.CbtSimulation = [SharedLib.PRFSNB, SharedLib.FBJZWE, SharedLib.QOL][v];
+            SharedLib.Combat.CbtSimulation = [SharedLib.PRFSNB, SharedLib.FBJZWE, SharedLib.QOL, SharedLib.HYSASQ][v];
           } catch (e) {
             console.log("SharedLib.Combat.CbtSimulation: ", e);
           }
@@ -74,7 +76,7 @@
         
         if (typeof ClientLib.Data.CityRepair === 'undefined') {
           try {
-            ClientLib.Data.CityRepair = [System.YSYTHM, System.CJRFBH, System.TVI][v];
+            ClientLib.Data.CityRepair = [System.YSYTHM, System.CJRFBH, System.TVI, System.JMOCEM][v];
           } catch (e) {
             console.log("SharedLib.Combat.CbtSimulation: ", e);
           }
@@ -84,7 +86,7 @@
           System.EventHandler = function() {
             try {
               console.log("System.EventHandler");
-              return [this.GRHRBP, this.WMJHOK, this.QQL][v]
+              return [this.GRHRBP, this.WMJHOK, this.QQL, this.UMBJYW][v]
             } catch (e) {
               console.log("System.EventHandler: ", e);
               return null;
@@ -94,7 +96,7 @@
         if (!System.EventHandler.prototype.$ctor) {
           System.EventHandler.prototype.$ctor = function() {
             try {
-              return [this.TNQEHB, this.GEDTYY, this.HGL][v];
+              return [this.TNQEHB, this.GEDTYY, this.HGL, this.EJYJNU][v];
             } catch (e) {
               console.log("System.EventHandler.$ctor: ", e);
               return null;
@@ -104,7 +106,7 @@
 
         if (!ClientLib.Vis.Battleground.BattlegroundEntity) {
           try {
-            ClientLib.Vis.Battleground.BattlegroundEntity = [System.MPWDBM, System.GMKMXN, System.GZJ][v];
+            ClientLib.Vis.Battleground.BattlegroundEntity = [System.MPWDBM, System.GMKMXN, System.GZJ, System.UJRHYF][v];
           } catch (e) {
             console.log("ClientLib.Vis.Battleground.BattlegroundEntity: ", e);
           }
@@ -114,7 +116,7 @@
           ClientLib.Res.ResMain.prototype.get_Gamedata = function() {
             // m_Gamedata
             try {
-              return [this.NUMTUV, this.IYHFVG, this.YEJ][v];
+              return [this.NUMTUV, this.IYHFVG, this.YEJ, this.NQWCNO][v];
             } catch (e) {
               console.log("ClientLib.Res.ResMain.prototype.get_Gamedata: ", e);
               return null;
@@ -125,7 +127,7 @@
           ClientLib.Data.CityUnits.prototype.get_FullRawRepairTimeForUnitGroupTypes = function() {
             // m_FullRawRepairTimeForUnitGroupTypes
             try {
-              return [this.RAECNA, this.NBLSAX, this.ZHG][v];
+              return [this.RAECNA, this.NBLSAX, this.ZHG, this.OLGZRY][v];
             } catch (e) {
               console.log("ClientLib.Res.ResMain.prototype.get_FullRawRepairTimeForUnitGroupTypes: ", e);
               return null;
@@ -137,7 +139,7 @@
           SharedLib.Combat.CbtSetup.prototype.get_Entities = function() {
             // m_Entities
             try {
-              return [this.UNMZDH, this.RMCABE, this.OAG][v];
+              return [this.UNMZDH, this.RMCABE, this.OAG, this.XYXNRM][v];
             } catch (e) {
               console.log("SharedLib.Combat.CbtSetup.prototype.get_Entities: ", e);
               return null;
@@ -149,7 +151,7 @@
           ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity = function() {
             // m_Entity
             try {
-              return [this.DPSDGN, this.HLUBJW, this.UBK][v];
+              return [this.DPSDGN, this.HLUBJW, this.UBK, this.OSWGOC][v];
             } catch (e) {
               console.log("ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_Entity: ", e);
               return null;
@@ -160,7 +162,7 @@
           ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_UnitType = function() {
             // m_UnitType
             try {
-              return [this.LLEHXS, this.CMCLEW, this.TAK][v];
+              return [this.LLEHXS, this.CMCLEW, this.TAK, this.UWWDAL][v];
             } catch (e) {
               console.log("ClientLib.Vis.Battleground.BattlegroundEntity.prototype.get_UnitType: ", e);
               return null;
@@ -171,7 +173,7 @@
           ClientLib.Data.CityBuildings.prototype.get_Buildings = function() {
             // m_Buildings , GetFullRepairTime
             try {
-              return [this.LYXSZY, this.ZATNVD, this.ZEI][v];
+              return [this.LYXSZY, this.ZATNVD, this.ZEI, this.RKLPXW][v];
             } catch (e) {
               console.log("ClientLib.Data.CityBuildings.prototype.get_Buildings: ", e);
               return null;
@@ -183,7 +185,7 @@
           ClientLib.Data.CityUnits.prototype.get_DefenseUnits = function() {
             // m_DefenseUnits
             try {
-              return [this.KWTOCI, this.OCYIKN, this.QIG][v];
+              return [this.KWTOCI, this.OCYIKN, this.QIG, this.QNYAIE][v];
             } catch (e) {
               console.log("ClientLib.Data.CityUnits.prototype.get_DefenseUnits: ", e);
               return null;
@@ -195,7 +197,7 @@
           ClientLib.Data.CityEntity.prototype.get_UnitLevelRequirements = function() {
             // m_UnitLevelRequirements.rer
             try {
-              return [this.KBUDOV, this.RBGTWS, this.KWG][v];
+              return [this.KBUDOV, this.RBGTWS, this.KWG, this.YUQEXG][v];
             } catch (e) {
               console.log("ClientLib.Data.CityEntity.prototype.get_UnitLevelRequirements: ", e);
               return null;
@@ -214,6 +216,10 @@
             case 2:
               ClientLib.Data.CityRepair.prototype.CanRepair = ClientLib.Data.CityRepair.prototype.TWI;
               break;
+              case 3: 
+                ClientLib.Data.CityRepair.prototype.CanRepair = ClientLib.Data.CityRepair.prototype.CRTGMD;
+                break;
+                
               
           }
         //ClientLib.Data.CityRepair.prototype.CanRepair = [System.YSYTHM.prototype.VGWGGR, System.CJRFBH.prototype.MZMQLL, System.CJRFBH.prototype.TWI][v];
@@ -230,6 +236,9 @@
             case 2:
               ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost = ClientLib.Data.CityRepair.prototype.HXI;
               break;
+              case 3:
+                ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost = ClientLib.Data.CityRepair.prototype.PSOTXF;
+                break;
           }
         //ClientLib.Data.CityRepair.prototype.UpdateCachedFullRepairAllCost = [System.YSYTHM.prototype.LVTUFF, System.CJRFBH.prototype.SQGYHR, System.CJRFBH.prototype.HXI][v];
         }
@@ -237,7 +246,7 @@
         if (!ClientLib.Data.City.prototype.getResourceLayout) {
           ClientLib.Data.City.prototype.getResourceLayout = function() {
             try {
-              return [this.JTKSIY, this.NCTWJE, this.KOI][v];
+              return [this.JTKSIY, this.NCTWJE, this.KOI, this.QFKOKN][v];
             } catch (e) {
               console.log("ClientLib.Data.City.prototype.getResourceLayout: ", e);
               return null;
@@ -249,7 +258,7 @@
           ClientLib.Vis.Battleground.Battleground.prototype.getSimulation = function() {
             // m_Simulation
             try {
-              return [this.EGIABS, this.HXGRQD, this.MAG][v];
+              return [this.EGIABS, this.HXGRQD, this.MAG, this.LCZLRE][v];
             } catch (e) {
               console.log("ClientLib.Vis.Battleground.Battleground.prototype.getSimulation: ", e);
               return null;
@@ -268,25 +277,28 @@
             case 2:
               SharedLib.Combat.CbtSimulation.prototype.DoStep = SharedLib.Combat.CbtSimulation.prototype.DPL;
               break;
+              case 3:
+                SharedLib.Combat.CbtSimulation.prototype.DoStep = SharedLib.Combat.CbtSimulation.prototype.PFKXLZ;
+                break;
           }
           
         /*
-          SharedLib.Combat.CbtSimulation.prototype.DoStep = function(_dryRun) {
-            // m_Simulation
-            try {
-              return [this.HGWHBL(_dryRun), this.ICPGRO(_dryRun), this.DPL(_dryRun)][v];
-            } catch (e) {
-              console.log("SharedLib.Combat.CbtSimulation.prototype.DoStep: ", e);
-              return null;
-            }
-          }*/
+SharedLib.Combat.CbtSimulation.prototype.DoStep = function(_dryRun) {
+// m_Simulation
+try {
+return [this.HGWHBL(_dryRun), this.ICPGRO(_dryRun), this.DPL(_dryRun)][v];
+} catch (e) {
+console.log("SharedLib.Combat.CbtSimulation.prototype.DoStep: ", e);
+return null;
+}
+}*/
         }
         // TEST //
         if (!ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout) {
           ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout = function() {
             // UpdateArmyLayout$0
             try {
-              return [this.AXPSSY(), this.TNEWNF(), this.DJG()][v];
+              return [this.AXPSSY(), this.TNEWNF(), this.DJG(), this.SQJYVV()][v];
             } catch (e) {
               console.log("ClientLib.Data.CityPreArmyUnits.prototype.UpdateArmyLayout: ", e);
               return null;
@@ -298,7 +310,7 @@
           ClientLib.Data.CityPreArmyUnits.prototype.RefreshData = function() {
             // RefreshData$0
             try {
-              return [this.ZDELLG(), this.AOMXAS(), this.BJG()][v];
+              return [this.ZDELLG(), this.AOMXAS(), this.BJG(), this.RKBGVA()][v];
             } catch (e) {
               console.log("ClientLib.Data.CityPreArmyUnits.prototype.RefreshData: ", e);
               return null;
@@ -339,3 +351,4 @@
     console.log("CCTAWrapper: init error: ", e);
   }
 })();
+
