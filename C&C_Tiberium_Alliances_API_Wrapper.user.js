@@ -3,7 +3,7 @@
 // @description Creating prototypes that EA missed in their API
 // @namespace CCTAWrapper
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 0.9b10
+// @version 0.9b11
 // @author mmaelstrom and PythEch
 // ==/UserScript==
 (function() {
@@ -77,12 +77,31 @@
             console.log("SharedLib.Combat.CbtSimulation: ", e);
           }
         }
+        if (typeof ClientLib.Data.World === 'undefined') {
+          try {
+            ClientLib.Data.World = [System.QLAHZR, System.DMZICA, System.HHH, System.OHKQYD, SharedLib.PWLPYH][v];
+          } catch (e) {
+            console.log("ClientLib.Data.World: ", e);
+          }
+        }
+        
+        if(!ClientLib.Data.World.prototype.getSectors) {
+          ClientLib.Data.World.prototype.getSectors = function() {
+            // m_Sectors
+            try {
+              return [this.RBJXOL, this.IWEESP, this.KIH, this.HYMYNV, this.ONQEIH][v];
+            } catch (e) {
+              console.log("ClientLib.Data.World.prototype.getSectors: ", e);
+              return null;
+            }
+          }
+        }
         
         if (typeof ClientLib.Data.CityRepair === 'undefined') {
           try {
             ClientLib.Data.CityRepair = [System.YSYTHM, System.CJRFBH, System.TVI, System.JMOCEM, SharedLib.AJJPZZ][v];
           } catch (e) {
-            console.log("SharedLib.Combat.CbtSimulation: ", e);
+            console.log("ClientLib.Data.CityRepair: ", e);
           }
         }
 
